@@ -9,7 +9,7 @@ return new class
         // $links->link(
         //     icon: 'home-2',
         //     label: 'Home',
-        //     href: 'obelaw.namemodule.home',
+        //     href: 'obelaw.contacts.home',
         // );
     }
 };

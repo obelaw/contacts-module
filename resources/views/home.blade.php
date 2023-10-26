@@ -6,7 +6,7 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        Obelaw NameModule
+                        Obelaw Contacts
                     </div>
                     <h2 class="page-title">
                         Home

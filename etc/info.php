@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'name' => 'NameModule',
-    'icon' => 'percentage',
-    'href' => 'obelaw.namemodule.home',
-    'slug' => 'namemodule',
+    'name' => 'Contacts',
+    'icon' => 'users',
+    'href' => 'obelaw.contacts.home',
+    'slug' => 'contacts',
+    'helper' => true,
 ];

@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::prefix('prefix')->group(function () {
-    //
+Route::prefix('contacts')->group(function () {
+    Route::get('/', function () {
+        return view('obelaw-contacts::home');
+    })->name('obelaw.contacts.home');
 });

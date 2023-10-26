@@ -1,10 +1,10 @@
 <?php
 
-namespace Obelaw\NameModule;
+namespace Obelaw\Contacts;
 
 use Illuminate\Support\ServiceProvider;
 
-class ObelawNameModuleServiceProvider extends ServiceProvider
+class ObelawContactsServiceProvider extends ServiceProvider
 {
 
     /**
@@ -24,6 +24,6 @@ class ObelawNameModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-namemodule');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-contacts');
     }
 }
