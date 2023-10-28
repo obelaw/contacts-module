@@ -3,6 +3,8 @@
 namespace Obelaw\Contacts;
 
 use Illuminate\Support\ServiceProvider;
+use Obelaw\Contacts\Interfaces\ContactRepositoryInterface;
+use Obelaw\Contacts\Repositories\ContactRepository;
 
 class ObelawContactsServiceProvider extends ServiceProvider
 {
@@ -14,7 +16,9 @@ class ObelawContactsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
+
+        $this->app->singleton('obelaw.contacts', ContactRepositoryInterface::class);
     }
 
     /**
