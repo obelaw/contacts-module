@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Obelaw\Contacts\Livewire\Contacts\CreateContactComponent;
+use Obelaw\Contacts\Livewire\Contacts\IndexContactsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,10 @@ Route::prefix('contacts')->group(function () {
     Route::get('/', function () {
         return view('obelaw-contacts::home');
     })->name('obelaw.contacts.home');
+
+    // Categories
+    Route::prefix('contacts')->group(function () {
+        Route::get('/', IndexContactsComponent::class)->name('obelaw.contacts.contacts.list');
+        Route::get('/create', CreateContactComponent::class)->name('obelaw.contacts.contacts.create');
+    });
 });
