@@ -6,8 +6,10 @@ use Obelaw\Contacts\Exceptions\JobPositionIsEmpty;
 use Obelaw\Contacts\Facades\Contacts;
 use Obelaw\Contacts\Utils\CreateCompanyContact;
 use Obelaw\Contacts\Utils\CreateCustomerContact;
+use Obelaw\Framework\ACL\Attributes\PermissionAccess;
 use Obelaw\Framework\Base\FromBase;
 
+#[PermissionAccess('contacts_contacts_create')]
 class CreateContactComponent extends FromBase
 {
     public $formId = 'obelaw_helper_contacts_contact_form';

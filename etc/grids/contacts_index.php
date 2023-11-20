@@ -16,7 +16,11 @@ return new class
 
     public function createBottom(Bottom $bottom)
     {
-        $bottom->setBottom('Create new contact', 'obelaw.contacts.contacts.create');
+        $bottom->setBottom(
+            label: 'Create New Contact',
+            route: 'obelaw.contacts.contacts.create',
+            permission: 'contacts_contacts_create',
+        );
     }
 
     public function table(Table $table)
@@ -28,9 +32,6 @@ return new class
 
     public function CTA(CTA $CTA)
     {
-        $CTA->setCall('Edit', [
-            'type' => 'route',
-            'route' => 'obelaw.catalog.products.update',
-        ]);
+        //
     }
 };
