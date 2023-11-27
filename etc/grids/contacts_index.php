@@ -1,11 +1,9 @@
 <?php
 
 use Obelaw\Contacts\Models\Contact;
-use Obelaw\Framework\Builder\Build\Grid\{
-    CTA,
-    Table,
-    Bottom
-};
+use Obelaw\Schema\Grid\Button;
+use Obelaw\Schema\Grid\CTA;
+use Obelaw\Schema\Grid\Table;
 
 return new class
 {
@@ -14,9 +12,9 @@ return new class
         return Contact::class;
     }
 
-    public function createBottom(Bottom $bottom)
+    public function createButton(Button $button)
     {
-        $bottom->setBottom(
+        $button->setButton(
             label: 'Create New Contact',
             route: 'obelaw.contacts.contacts.create',
             permission: 'contacts_contacts_create',

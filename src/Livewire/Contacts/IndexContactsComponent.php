@@ -2,11 +2,11 @@
 
 namespace Obelaw\Contacts\Livewire\Contacts;
 
-use Obelaw\Framework\ACL\Attributes\PermissionAccess;
-use Obelaw\Framework\Base\GridBase;
+use Obelaw\UI\Permissions\Access;
+use Obelaw\UI\Renderer\GridRender;
 
-#[PermissionAccess('contacts_contacts_index')]
-class IndexContactsComponent extends GridBase
+#[Access('contacts_contacts_index')]
+class IndexContactsComponent extends GridRender
 {
     public $gridId = 'obelaw_helper_contacts_contacts_index';
 

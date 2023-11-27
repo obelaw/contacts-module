@@ -1,9 +1,16 @@
 <?php
 
-return [
-    'name' => 'Contacts',
-    'icon' => 'users',
-    'href' => 'obelaw.contacts.home',
-    'slug' => 'contacts',
-    'helper' => true,
-];
+use Obelaw\Schema\ModuleInfo;
+
+return new class
+{
+    public function setInfo(ModuleInfo $module)
+    {
+        $module->info(
+            name: 'Contacts',
+            icon: 'users',
+            href: 'obelaw.contacts.home',
+            helper: true
+        );
+    }
+};
