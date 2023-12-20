@@ -7,10 +7,7 @@ use Obelaw\Schema\Grid\Table;
 
 return new class
 {
-    public function model()
-    {
-        return Contact::class;
-    }
+    public $model = Contact::class;
 
     public function createButton(Button $button)
     {
