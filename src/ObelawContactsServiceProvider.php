@@ -5,6 +5,8 @@ namespace Obelaw\Contacts;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Obelaw\Contacts\Interfaces\ContactRepositoryInterface;
+use Obelaw\Contacts\Livewire\Addresses\CreateAddressesComponent;
+use Obelaw\Contacts\Livewire\Addresses\IndexAddressesComponent;
 use Obelaw\Contacts\Livewire\Contacts\CreateContactComponent;
 use Obelaw\Contacts\Livewire\Contacts\IndexContactsComponent;
 use Obelaw\Contacts\Repositories\ContactRepository;
@@ -33,6 +35,9 @@ class ObelawContactsServiceProvider extends ServiceProvider
     {
         Livewire::component('obelaw-contacts-contacts-index', IndexContactsComponent::class);
         Livewire::component('obelaw-contacts-contacts-create', CreateContactComponent::class);
+
+        Livewire::component('obelaw-contacts-addresses-index', IndexAddressesComponent::class);
+        Livewire::component('obelaw-contacts-addresses-create', CreateAddressesComponent::class);
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-contacts');
     }

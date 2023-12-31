@@ -17,5 +17,11 @@ return new class
             label: 'Contacts',
             href: 'obelaw.contacts.contacts.list',
         );
+
+        $links->link(
+            icon: 'address-book',
+            label: 'Addresses',
+            href: 'obelaw.contacts.addresses.list',
+        );
     }
 };
