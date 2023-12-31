@@ -10,7 +10,7 @@ return new class
             name: 'Contacts',
             icon: 'users',
             href: 'obelaw.contacts.home',
-            helper: true
+            group: 'helper_modules',
         );
     }
 };
