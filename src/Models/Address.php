@@ -2,9 +2,10 @@
 
 namespace Obelaw\Contacts\Models;
 
-use Obelaw\Framework\Base\ModelBase;
+use Obelaw\Contacts\Models\Pin;
+use Obelaw\Twist\Base\BaseModel;
 
-class Address extends ModelBase
+class Address extends BaseModel
 {
     protected $table = 'contacts_addresses';
 
@@ -15,13 +16,25 @@ class Address extends ModelBase
      */
     protected $fillable = [
         'contact_id',
-        'label',
-        'country_code',
+        'country_id',
         'city_id',
+        'state_id',
+        'area_id',
+        'label',
         'postcode',
         'street_line_1',
         'street_line_2',
         'phone_number',
         'is_main',
     ];
+
+    public function country()
+    {
+        return $this->hasOne(Pin::class, 'id', 'country_id');
+    }
+
+    public function city()
+    {
+        return $this->hasOne(Pin::class, 'id', 'city_id');
+    }
 }

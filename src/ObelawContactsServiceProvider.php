@@ -3,13 +3,7 @@
 namespace Obelaw\Contacts;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
-use Obelaw\Contacts\Interfaces\ContactRepositoryInterface;
-use Obelaw\Contacts\Livewire\Addresses\CreateAddressesComponent;
-use Obelaw\Contacts\Livewire\Addresses\IndexAddressesComponent;
-use Obelaw\Contacts\Livewire\Contacts\CreateContactComponent;
-use Obelaw\Contacts\Livewire\Contacts\IndexContactsComponent;
-use Obelaw\Contacts\Repositories\ContactRepository;
+use Obelaw\Twist\Addons\AddonsPool;
 
 class ObelawContactsServiceProvider extends ServiceProvider
 {
@@ -21,9 +15,7 @@ class ObelawContactsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
-
-        $this->app->singleton('obelaw.contacts', ContactRepositoryInterface::class);
+        //
     }
 
     /**
@@ -33,12 +25,6 @@ class ObelawContactsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Livewire::component('obelaw-contacts-contacts-index', IndexContactsComponent::class);
-        Livewire::component('obelaw-contacts-contacts-create', CreateContactComponent::class);
-
-        Livewire::component('obelaw-contacts-addresses-index', IndexAddressesComponent::class);
-        Livewire::component('obelaw-contacts-addresses-create', CreateAddressesComponent::class);
-
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'obelaw-contacts');
+        AddonsPool::loadTwist(__DIR__ . '/../twist.php');
     }
 }

@@ -1,9 +1,6 @@
 {
-    "name": "obelaw/contacts-helper-module",
+    "name": "obelaw/contacts",
     "autoload": {
-        "files": [
-            "obelaw.php"
-        ],
         "psr-4": {
             "Obelaw\\Contacts\\": "src/"
         }
@@ -15,7 +12,7 @@
         }
     ],
     "require": {
-        "obelaw/ui": "^1.0"
+        "obelaw/twist": "*"
     },
     "extra": {
         "laravel": {
@@ -23,5 +20,7 @@
                 "Obelaw\\Contacts\\ObelawContactsServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
