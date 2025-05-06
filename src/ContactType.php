@@ -19,19 +19,17 @@ class ContactType
 
     public static function add(string $type, int $value, string $group = null): void
     {
-        if (self::isValid($value)) {
-            throw new InvalidArgumentException("Type '$type' already exists.");
+        if (!self::isValid($value)) {
+            if (!is_int($value)) {
+                throw new InvalidArgumentException("Value must be an integer.");
+            }
+
+            if ($group)
+                self::$types[$group][$type] = $value;
+
+            if (!$group)
+                self::$types[$type] = $value;
         }
-
-        if (!is_int($value)) {
-            throw new InvalidArgumentException("Value must be an integer.");
-        }
-
-        if ($group)
-            self::$types[$group][$type] = $value;
-
-        if (!$group)
-            self::$types[$type] = $value;
     }
 
     public static function get(string $type, string $group = null): ?int
@@ -55,7 +53,7 @@ class ContactType
     private static function getAllValuesFlat(array $array): array
     {
         $flatValues = [];
-        
+
         array_walk_recursive($array, function ($value) use (&$flatValues) {
             $flatValues[] = $value;
         });

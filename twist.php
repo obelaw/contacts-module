@@ -3,6 +3,6 @@
 use Obelaw\Contacts\ContactsAddon;
 
 \Obelaw\Twist\Addons\AddonRegistrar::register(
-    'obelaw.erp.contacts',
+    'obelaw.contacts',
     ContactsAddon::class
 );
