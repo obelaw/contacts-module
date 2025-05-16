@@ -3,6 +3,7 @@
 namespace Obelaw\Contacts;
 
 use Illuminate\Support\ServiceProvider;
+use Obelaw\Contacts\Console\Commands\ImportPinsCommand;
 use Obelaw\Twist\Addons\AddonsPool;
 
 class ObelawContactsServiceProvider extends ServiceProvider
@@ -26,5 +27,11 @@ class ObelawContactsServiceProvider extends ServiceProvider
     public function boot()
     {
         AddonsPool::loadTwist(__DIR__ . '/../twist.php');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ImportPinsCommand::class,
+            ]);
+        }
     }
 }
