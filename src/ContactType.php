@@ -17,7 +17,7 @@ class ContactType
         // Prevent instantiation
     }
 
-    public static function add(string $type, int $value, string $group = null): void
+    public static function add(string $type, int $value, string|null $group = null): void
     {
         if (!self::isValid($value)) {
             if (!is_int($value)) {
@@ -32,7 +32,7 @@ class ContactType
         }
     }
 
-    public static function get(string $type, string $group = null): ?int
+    public static function get(string $type, string|null $group = null): ?int
     {
         if ($group)
             return self::$types[$group][$type] ?? null;
